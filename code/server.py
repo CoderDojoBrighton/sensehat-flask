@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from sense_hat import SenseHat
 import json
 
@@ -25,6 +25,14 @@ def get_colour():
     red,green,blue,clear = sense.colour.colour
     data={'red': red, 'green': green, 'blue': blue, 'clear': clear}
     return json.dumps(data)
+
+@app.route('/message', methods=['POST'])
+def show_message():
+    body = request.get_json()
+    message = body['message']
+    sense.show_message(message)
+    return "success"
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

@@ -60,3 +60,6 @@ class SenseHat():
 
     def get_humidty(self):
         return random.uniform(0, 100)
+
+    def show_message(self, text_string, scroll_speed=.1,text_colour=[255, 255, 255],back_colour=[0, 0, 0]):
+        print(f"Showing message on pi: {text_string}")
