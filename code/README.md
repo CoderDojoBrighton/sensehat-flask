@@ -51,3 +51,15 @@ The IP address can be found by running:
 ```bash
 hostname -I
 ```
+
+## Writing a Message to the Pi
+
+Using the command line:
+```bash
+curl -d '{"message": "test message"}' -H 'Content-Type: application/json' -X POST http://localhost:5000/message
+```
+
+Using the Python file:
+```bash
+python send_message.py
+```
