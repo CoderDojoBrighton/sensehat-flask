@@ -4,6 +4,8 @@
 
 The code should be run on your Raspberry Pi with a [sense HAT](https://www.raspberrypi.com/documentation/accessories/sense-hat.html) attached.
 
+If you do not have a Pi, the `sense_hat.py` file provides a stubbed version of the library to use.
+
 We recommend using a virtual environment, but this is optional:
 ```bash
 # Optional, but recommended
