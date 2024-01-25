@@ -5,6 +5,8 @@ import json
 app = Flask(__name__)
 
 sense = SenseHat()
+sense.colour.gain = 4
+sense.colour.integration_cycles = 64
 
 @app.route('/temperature')
 def get_temperature():
@@ -16,6 +18,12 @@ def get_temperature():
 def get_humidty():
     humidty = sense.get_humidty()
     data={'temp': humidty}
+    return json.dumps(data)
+
+@app.route('/colour')
+def get_colour():
+    red,green,blue,clear = sense.colour.colour
+    data={'red': red, 'green': green, 'blue': blue, 'clear': clear}
     return json.dumps(data)
 
 if __name__ == "__main__":
