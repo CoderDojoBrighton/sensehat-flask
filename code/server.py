@@ -12,6 +12,12 @@ def get_temperature():
     data={'temp': temp}
     return json.dumps(data)
 
+@app.route('/humidty')
+def get_humidty():
+    humidty = sense.get_humidty()
+    data={'temp': humidty}
+    return json.dumps(data)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
 
