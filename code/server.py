@@ -16,8 +16,8 @@ def get_temperature():
 
 @app.route('/humidty')
 def get_humidty():
-    humidty = sense.get_humidty()
-    data={'temp': humidty}
+    humidty = sense.get_humidity()
+    data={'humidity': humidty}
     return json.dumps(data)
 
 @app.route('/colour')
